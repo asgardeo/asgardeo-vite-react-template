@@ -1,14 +1,13 @@
 # Asgardeo Vite React Template
 
-This template enables you to create a **Vite React** application integrated with **Asgardeo** authentication, built for modern web development. It leverages **tmplr** to streamline project initialization, offering a customizable and scalable setup.
+This template enables you to create a **Vite React** application integrated with [**`@asgardeo/react`**](https://wso2.com/asgardeo/docs/sdks/react/overview/) for authentication, built for modern web development. It leverages [**tmplr**](https://github.com/loreanvictor/tmplr) to streamline project initialization, offering a customizable and scalable setup.
 
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [ Asgardeo Configuration](#asgardeo-configuration)
+  - [Asgardeo Configuration](#asgardeo-configuration)
 - [Running the Recipe](#running-the-recipe)
 - [License](#license)
 
@@ -33,16 +32,16 @@ Before you begin, make sure you have the following installed on your machine:
 
 - Log in to your Asgardeo Console.
 - On the Asgardeo Console, go to Applications.
-- Click New Application and select Single-Page Application.
+- Click `New Application` and select `React`.
 - Enter the following details when creating the application:
 
     | Field Name                       | Description                                                                                             |
-    | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
-    | Name                         | Give a unique name to identify your application.                                                          |
-    | Authorized redirect URLs     | The URL to which the user is redirected after a successful login. Use the following URL for this app: http://localhost:5173                                         |
+   |-------------------------------|---------------------------------------------------------------------------------------------------------|
+   | Name                          | Give a unique name to identify your application.                                                         |
+   | Authorized redirect URLs      | The URL to which the user is redirected after a successful login.<br>Use the following URL for this app:</br>**<http://localhost:5173>** |
 
-- Click Register to complete the registration.
-- Go to the Protocol tab and take note of the Client ID. You will need it to configure the application later.
+- Click **Create** to complete the registration.
+- On the **Guide** tab, take note of the **Client ID** & **Base URL**. You will need it to configure the application later.
 
 ## Folder Structure
 
@@ -84,5 +83,5 @@ npm run dev
 ```
 
 ## License
-This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
 
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.

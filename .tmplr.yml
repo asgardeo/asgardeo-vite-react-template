@@ -1,29 +1,28 @@
 steps:
-  - read: package_name
-    prompt: "Please enter a package name for your app (e.g., my-vite-app):"
-    fallback: "my-vite-app"
+  - read: name
+    prompt: "Please enter a name for your app (e.g., my-asgardeo-react):"
+    fallback: "asgardeo-react"
 
   - read: version
-    prompt: "Please enter the version for your app (default: 1.0.0):"
-    fallback: "1.0.0"
+    prompt: "Please enter the version for your app (default: 0.1.0):"
+    fallback: "0.1.0"
 
   - read: author
-    prompt: "Please enter the author's name:"
+    prompt: "Please enter the app author's name:"
     fallback: "WSO2" 
 
-  - read: asgardeo_clientID
+  - read: clientId
     prompt: "Please enter your Asgardeo Client ID:"
-    fallback: "asgardeoClientID"
+    fallback: "<your-app-client-id>"
 
-  - read: asgardeo_org_name
+  - read: organization_name
     prompt: "Please enter your Asgardeo Organization name:"
-    fallback: "asgardeoOrgName"
+    fallback: "<your-organization-name>"
   
   - update: package.json
   - update: src/main.jsx
   
   - remove: LICENSE
   - remove: README.md
-  - remove: issue_template.md
-  - remove: pull_request_template.md
+  - remove: .github
   - remove: .tmplr.yml

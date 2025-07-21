@@ -1,26 +1,28 @@
-import "./App.css";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
-import { AuthenticatedComponent } from "@asgardeo/auth-react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { ProtectedRoute } from '@asgardeo/react-router';
 import { LandingPage } from "./pages/LandingPage";
 import { HomePage } from "./pages/HomePage";
-
-const routers = createBrowserRouter([
-    {
-        path: "/",
-        element: <LandingPage />,
-    },
-    {
-        path: "/home",
-        element: (
-            <AuthenticatedComponent fallback={<Navigate to='/' />}>
-                <HomePage />
-            </AuthenticatedComponent>
-        ),
-    }
-]);
+import './App.css'
 
 function App() {
-    return <RouterProvider router={ routers } />;
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={<LandingPage />}
+        />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute redirectTo='/'>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
